@@ -10,10 +10,10 @@ SKIP_TAGS_VARS += positive
 endif
 endif
 
+TESTBED_NAME = $(shell -oP "<testbed name=(.*)" src/topology/topology.xml | cut -d "=" -f 2 | cut -d ">" -f 1)
+
 .PHONY: test-leaf-spine-onboarding
 test-leaf-spine-onboarding:
 	@echo leaf_spine_onboarding
-	@echo leaf_spine_onboarding $(leaf_spine_onboarding)
-	@echo OR_PODS $(OR_PODS)
-	@echo $(SKIP_TAGS_VARS)
-	robot --include $(SKIP_TAGS_VARS) test_suite/onboarding/
+	@echo leaf_spine_onboarding TESTBED_NAME
+#	robot --include $(SKIP_TAGS_VARS) test_suite/onboarding/
