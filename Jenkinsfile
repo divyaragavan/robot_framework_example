@@ -33,7 +33,7 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"
-	      
+	      params.Testbed_name = "large"
 	      runTest('leaf-spine-onboarding')
             }
           }
