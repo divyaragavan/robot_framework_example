@@ -1,10 +1,11 @@
 #!groovy
-topolology_url = "or-large"
+topolology_url = ""
 def runTest(application) {
 	
 		echo "application: $application"
 		echo pwd
 		sh "pwd"
+	        topolology_url = "large"
 		dir("test-${application}") {	
 			sh "cd /home/developer/robot_framework_example/ && make test-${application}"
 		}
